@@ -9,5 +9,17 @@
     "vkey": "multiplier/out/multiplier.vkey",
     "r1cs": "multiplier/out/multiplier.r1cs",
     "beacon": "0102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f"
+  },
+  {
+    "name": "newcircuit",
+    "version": 2,
+    "protocol": "groth16",
+    "circuit": "newcircuit/circuit.circom",
+    "input": "newcircuit/input.json",
+    "wasm": "newcircuit/out/circuit.wasm",
+    "zkey": "newcircuit/out/newcircuit.zkey",
+    "vkey": "newcircuit/out/newcircuit.vkey",
+    "r1cs": "newcircuit/out/newcircuit.r1cs",
+    "beacon": "0102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f"
   }
 ]
