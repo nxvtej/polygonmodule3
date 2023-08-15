@@ -2,32 +2,30 @@ pragma circom 2.0.0;
 
 template multiplier () {  
 
-   signal input inputsignal_1;  
-   signal input inputsignal_2;  
+   signal input a;  
+   signal input b;  
 
    signal x;
    signal y;
-
-   //Declaration of final signal output
    signal output Q;
 
    component andGate=AND();
    component notGate=NOT();
    component orGate=OR();
 
-   //circuit logic
-   andGate.inputsignal_1 <== inputsignal_1;
-   andGate.inputsignal_2 <== inputsignal_2;
+   //logic
+   andGate.a <== a;
+   andGate.b <== b;
    x <== andGate.out;
 
-   notGate.in <== inputsignal_2;
+   notGate.in <== b;
    y <== notGate.out;
 
-   orGate.inputsignal_1 <== x;
-   orGate.inputsignal_2 <== y;
+   orGate.a <== x;
+   orGate.b <== y;
    Q <== orGate.out;
 
-   //Value of Q when input a=0 & b=1;
+   //Value of Q
    log("Q equal to:", Q);
 
 }
@@ -45,8 +43,6 @@ template NOT() {
     signal output out;
 
     out <== 1 + in - 2*in;
-    // if(in>0)
-    // out = 0
 }
 
 template OR() {
